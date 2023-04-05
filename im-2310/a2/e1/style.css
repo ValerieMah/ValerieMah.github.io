@@ -1,0 +1,127 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+
+}
+
+:root{
+  --colour-one: rgb(237, 230, 214);
+  --colour-two: rgb(242, 121, 121);
+  --colour-three: rgb(187, 180, 187);
+  --colour-four: rgb(57, 52, 89);
+  --border-one: rgb(242, 145, 116);
+  /* The colour palette is obtained from the original comic strip. Originally, I wanted to use cool colours. However, I realized that warm colours would be better for the page as it's stronger
+  and matches with the comic theme. If the saturation was too high, it would make it awfully difficult and painful for the viewers to view the webpage. The colours stand out and isn't too 
+  bright all over the place and is only bright on the places where the viewers are to focus- attention grabbing. */
+}
+
+body{
+  background-color: var(--colour-three);
+}
+
+
+
+#grid-container {
+    display: grid; 
+    background-color: var(--colour-one);
+    height: 100vh;
+    width: 35vw;
+    /* Height and width is set this way to fit nicely and still be visible on the page. This is made possible with the usage of vw and vh which will help automatically resizes the grids. */
+    margin: 0 auto;
+    display: grid;
+    row-gap: 10px;
+    column-gap: 5px;
+    padding: 30px 5px;
+    border: dashed 10px var(--colour-four);
+    /* I used dashed lines above the border so that the container will be emphasised- not blended into the screen. The dashed lines made the container neatly stand out.
+    The dashed lines reminded me of the footsteps remains that are imprinted on the trail as the adventurer continues to puruse his journey/adventure. Besides that, the  */
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr ; 
+    grid-template-rows: 1fr 1fr 1fr 3fr; 
+    /* These are the fractions whichh will divide the space in the columns for my boxes */
+}
+
+.gridbox{
+  border: var(--border-one);
+  border-radius: 8px;
+  /* I implemented radius onto my border style as it looks really clean. The impression and effect it gives off is not too strong. Thus, creating a soft and calm visual effect. */
+}
+
+#pic1{
+  grid-row:1/3;
+  grid-column: 1;
+  border: var(--border-one);
+  border-width: 10px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 9fr 9fr;
+  z-index: 1;
+  background-image: linear-gradient(rgb(235, 125, 125), rgb(192, 147, 147));
+  /* I arranged my gradient in such a way to show and match with the flow of the storyline/movement. I reckon it narrates the attention flow that links to the next box (box 1> box 2> box 3) with the gravitational-like flow. */
+}
+
+#pic2{
+  grid-row:2/4;
+  grid-column: 2;
+  border: var(--border-one);
+  border-width: 10px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 9fr 9fr;
+  z-index: 1;
+  background-image: linear-gradient(rgb(252, 194, 194), rgb(189, 110, 110));
+}
+
+#pic3{
+  grid-row:1/3;
+  grid-column: 3;
+  border: dotted var(--border-one);
+  /* I started adding dotted border styles from this box onwards to create the first impression how the tension gradually starts to increase. The idea of this is to direct the 
+  viewers' attention that something is about to happen- the start. */
+  border-width: 10px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 9fr 9fr;
+  z-index: 1;
+  background-image: linear-gradient(var(--colour-three), rgb(247, 145, 145));
+}
+
+#pic4{
+  grid-row:2/4;
+  grid-column: 4;
+  border: dashed var(--border-one);
+  /* Similar to the dotted border syle, this is the stronger border style development from the dotted borders alone. With the dash, it will show the vieweres' the change in
+  that is happening, which is part of building tesion and making it attention grabbing. */
+  border-width: 10px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 9fr 9fr;
+  z-index: 1;
+  background-image: linear-gradient(to right, var(--colour-three), rgb(235, 94, 94));
+}
+
+#pic5{
+  grid-row:1/3;
+  grid-column: 5;
+  border: groove var(--border-one);
+  /* The second last tension on the list. I was contemplating between using this and solid directly but I feel like with the effects that groove produces, it allows the border
+  to not look flat and to create a more defined difference from the dotted and dashed development. It stands out even more with the darker shade of contrast. */
+  border-width: 10px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 9fr 9fr;
+  z-index: 1;
+  background-image: linear-gradient(rgb(235, 97, 56), rgb(255, 255, 255),rgb(235, 97, 56));
+    /* The gradient for this box is very different compared to the first four. The idea behind of it is to create the shock-line or overall difference which stands out and can capture the 
+    viewers' attention. This effect will signal viewers the shocked, explosive tension that is or is going to happen. */
+}
+
+#pic6{
+  grid-row:4;
+  grid-column: 1/6;
+  border: solid var(--border-one);
+  /* The final part to the strong tension- a solid and direct border to show the major part of the comic strip page. This helps emphasis the impression of the overall box. */
+  border-width: 10px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 9fr 9fr;
+  z-index: 1;
+  background-color: var(--colour-three);
+  background-image: repeating-linear-gradient(rgb(235, 97, 56), rgb(235, 97, 56)10px, var(--colour-three), var(--colour-three)20px);
+    /* I decided to implement the repeating linear gradient because it immediately draws and attract the attention of viewers that something has happened (Thanks to the textur-like pattern)-
+   much more than the box before this. The overall design is definitely the unique special one of them all and helps close up the tension with more possibilities instead of a boring solid background. */
+}
+
