@@ -1,7 +1,6 @@
 *{
   box-sizing: border-box;
   margin: 0;
-
 }
 
 :root{
@@ -18,8 +17,6 @@
 body{
   background-color: var(--colour-three);
 }
-
-
 
 #grid-container {
     display: grid; 
@@ -124,4 +121,3 @@ body{
     /* I decided to implement the repeating linear gradient because it immediately draws and attract the attention of viewers that something has happened (Thanks to the textur-like pattern)-
    much more than the box before this. The overall design is definitely the unique special one of them all and helps close up the tension with more possibilities instead of a boring solid background. */
 }
-
