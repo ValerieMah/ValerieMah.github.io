@@ -1,0 +1,175 @@
+*{
+  box-sizing: border-box;
+  background-origin: border-box;
+  margin: 0;
+}
+
+:root{
+  --col-01:rgb(199, 202, 207);
+  --col-02:rgb(240, 145, 51);
+  --col-03:rgb(218, 201, 113);
+  --col-04:rgb(247, 194, 114);
+  --border: 1px solid rgb(86, 138, 159);
+  /* The colour palette here I used was obtained from a template online which I really liked. The colour palette creates a soft and comfortable feel for 
+  my webpage while also allowing the details to stand out and not get blended in with the background. Having the website feel too strong feels very odd 
+  for a webpage such as this since cooking should be fun and relaxing. */
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--col-01);
+  color: rgb(86, 138, 159);
+}
+
+h1{
+  max-width: fit-content;
+  font-size: 3rem;
+  margin: 25px auto;
+  margin-bottom: 50px;
+  font-size: 80px;
+  color: var(--col-02);
+}
+
+h2{
+ text-align: center;
+ font-size: 60px;
+ color: var(--col-02);
+}
+
+h3{
+  text-align: center;
+  margin: 25px auto;
+  margin-bottom: 25px;
+  font-size: 42px;
+}
+
+.TitleBox{
+  margin: auto;
+  width: 100%;
+  background-color: var(--col-03);
+  align-self: center;
+}
+
+.RecipeBox{
+  display: inline-block;
+  vertical-align: middle;
+  background-color: var(--col-03);
+  flex-direction: column;
+  border: var(--border);
+  max-width: 80%;
+  border-style: solid;
+  border-width: 5px;
+  padding: 25px;
+  padding-bottom: 50px;
+  margin-left: 65px;
+  margin-right: 5px;
+  margin-bottom: 50px;
+  overflow: auto;
+  border-radius: 25px;
+  width: 850px;
+  height: 1100px;
+}
+
+.RecipeImageContainer{
+ text-align: center;
+}
+
+.RecipeImg{
+ text-align: center;
+ width: 100%;
+}
+
+.DescriptionImg{
+  text-align: center;
+  margin-top: 30px;
+  width: 99%;
+}  
+
+.DescriptionImg2{
+  text-align: center;
+  margin-top: 80px;
+  width: 100%;
+}  
+
+.FilterButton {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 15px 8px;
+  cursor: pointer;
+  background-color: var(--col-04);
+}
+  
+.navigationbar {
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  background-color:rgb(247, 194, 114);
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+  width: 300px;
+  /* These few codes here are the css style that allowed me to create a dropdown box that would appear over the webpage when my mouse hovers over it. 
+  Initially, the options could only be seen when the categories were clicked onto. However, when it was clicked, yes, the categories would all appear on a neat list.
+  However, this lead to my page from being oddly moved and imbalance which is something I personally feel will agitate the users since it would lead to disorientation
+  and uneasiness while navigating through the webpage. */
+}
+
+.dropdown .FilterButton {
+  background-color: var(--col-04);
+  color: white;
+  padding: 16px;
+  font-size: 24px;
+  border: none;
+  text-align:center;
+  width: 250px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--col-04);
+  color: white;
+  padding: 16px;
+  font-size: 24px;
+  border: none;
+  text-align:center;
+  width:300px;
+}
+
+.dropdown-content a {
+  float: none;
+  color: rgb(86, 138, 159);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--col-03);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.row{
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.Author{
+ color:white;
+ font-size: 20px; 
+}

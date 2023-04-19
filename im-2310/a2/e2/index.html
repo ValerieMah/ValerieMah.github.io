@@ -2,20 +2,556 @@
 
 <html lang="en">
 
-<head>
+  <head>
 
-    <meta charset="utf-8" name="viewport" content="width=device-width, initial scale=1.0">
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 
-    <script src="script.js"></script>
+    <script src="./filter.js" defer></script>
 
-</head>
+    <div class="TitleBox">
+    <tittle><h1><strong><u>Exercise 2</u></strong></h1></tittle>
+    <h3>Interactive Media 1 Recipe List</h3>
+    </div>
 
-<body>
+  </head>
 
-    <h1>This is a test. My life is amess. I need to rest.</h1>
+  <body>
+
+    <hr /> 
+
+<div class="navigationbar">
+    <div class="dropdown">
+        <button class="FilterButton">Author</button>
+        <div class="dropdown-content">
+            <a href="#" onclick='filterCategory("KLA", this)'>J. Kenji López-Alt</a>
+            <a href="#" onclick='filterCategory("M", this)'>Maangchi</a>
+            <a href="#" onclick='filterCategory("HM", this)'>Hetty McKinnon</a>
+            <a href="#" onclick='filterCategory("CLM", this)'>Carla Lalli Music</a>
+            <a href="#" onclick='filterCategory("RecipeBox", this)'>All Authors</a>
+        </div>
+        <!-- Default navigation option that was set by the lecturer. This selection will be good for those who know specifically which chef's recipe would they like to follow.
+        However, it may not be as useful to everyone because not everyone will know who are they. Regardless of that, users will now get to know who they are. -->
+    </div>
+
+    <div class="dropdown">
+        <button class="FilterButton">Diet</button>
+        <div class="dropdown-content">
+            <a href="#" onclick='filterCategory("V", this)'>Vegetarian</a>
+            <a href="#" onclick='filterCategory("MB", this)'>Meat Based</a>
+            <a href="#" onclick='filterCategory("P", this)'>Pescatarian</a>
+        </div>
+        <!-- I chose to add this section (Category of food) as nowadays, people are more cautious of their food intake. Thus, having this option will make it easier for users 
+        to decide and view recipe with convenience while maintaining and following their diet requirement. With that being said, I decided to seperate the options based on
+        vegetarian, meat based and pescatarian. This will allow users to know what is the main content of the food without them needing to read through the whole ingrediants list. -->
+    </div>
+
+    <div class="dropdown">
+        <button class="FilterButton">Course Meal</button>
+        <div class="dropdown-content">
+            <a href="#" onclick='filterCategory("S", this)'>Starter</a>
+            <a href="#" onclick='filterCategory("MC", this)'>Main Course</a>
+            <a href="#" onclick='filterCategory("SD", this)'>Snack</a>
+            <a href="#" onclick='filterCategory("D", this)'>Dessert</a>
+        </div>
+        <!-- I added this option as I considered about the type of food that some users may want to prepare. This makes thing a lot more convenient as users may sometimes have difficulties
+        brainstorming on what to prepare for their dinner table. Back home, we would always serve the same few dishes (mostly main course and 1-2 Snacks + Dessert) which is why I feel like
+        having these options as one of the filters will be a great way to gather brainstorming ideas all on one website instead of searching externally "Dinner Starter Ideas", "Dessert Menu ideas"
+        or "Dinner course meal ideas" etc. on Google. -->
+    </div>
     
-</body>
+    <div class="dropdown">
+        <button class="FilterButton">Cuisine</button>
+        <div class="dropdown-content">
+            <a href="#" onclick='filterCategory("I", this)'>Italian</a>
+            <a href="#" onclick='filterCategory("F", this)'>Fusion</a>
+            <a href="#" onclick='filterCategory("K", this)'>Korean</a>
+            <a href="#" onclick='filterCategory("W", this)'>Western</a>
+            <a href="#" onclick='filterCategory("A", this)'>American</a>
+            <a href="#" onclick='filterCategory("NA", this)'>North African</a>
+            <a href="#" onclick='filterCategory("R", this)'>Russian</a>
+            <a href="#" onclick='filterCategory("FR", this)'>French</a>
+        </div>
+    </div>
+    <!-- This is always the very first thing I think about when deciding what to eat "What am I craving for?". Nowadays, there are a wide variety of different type of cuisine available
+    which makes everyone's foodie life and journey more interesting and exciting. With this feature, it'll allow more users to try different type of cuisines and discover the all the 
+    different and unique taste of the world. -->
+</div>
+
+    <!-- Recipe 1 -->
+    <div class="row">
+      <!-- I used rows instead of grids and columns because this would allow the html to automatically adjust the placement and align my containers before and after the filter.
+      The row attribute is a lot more simpler and convenient for general and non-specific spacing and placement of containers. -->
+    <div class="RecipeBox HM V MC I">
+      <!-- As you can see from the very random "HM", "V", "MC", and "I", these are markings that I included to indicate which belongs to which filter button category. They are mostly 
+      just conveniently labelled based on the first alphabet of the word/naming. These "keywords" can be seen listed on the dropdown filter button category above. -->
+      
+      <div class="RecipeImageContainer">
+
+      <a href="https://www.abc.net.au/everyday/baked-puttanesca-risotto-with-tomato-olives-lemon-parsley-recipe/11270338" target="_blank">
+        <img class="RecipeImg" src="./images/Puttanesca.jpg" alt="bowl of puttanesca pasta" />
+        <!-- The "<a href="link" code line allows me to let the user get redirected to the recipe website when they click onto the png image. This will make things a lot more convenient
+        and easier for users to find the recipe that will automatically redirect them to a new tab with the following recipe. -->
+
+        <p class="Attribution">
+          "<a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/10559879@N00/5996763901">Spaghetti Puttanesca con Tonno</a>" by 
+          <a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/10559879@N00">avlxyz</a> is licensed under 
+          <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/2.0/?ref=openverse">
+            CC BY-NC-SA 2.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+          </a>
+        </p>
+      
+        <a href="https://www.abc.net.au/everyday/baked-puttanesca-risotto-with-tomato-olives-lemon-parsley-recipe/11270338" target="_blank">
+          <h2 class="RecipeName"><u>Baked Puttanesca Risotto with Olives, Lemon and Parsley</u></h2>  
+          <!-- Same as the image above with this code, clicking on the name of the dish will also automatically redirect users to the recipe website on a different tab. This will provide 
+          convenience to the users. Though some may also argue that redirecting users OUT of the website reduces the interaction of this webpage. However, I feel that it's more convenient 
+          to have users just get redirected to the original source of the recipe and not force the users to have to scroll another website ON a website just to keep the users from staying 
+          on my webpage. -->
+          </a>
+        
+        <p class="Author"><i>By: Hetty Mckinnon</i></p>
+
+      </div>
+      
+      <div>
+        <img class="DescriptionImg2" src="./images/recipe 1.png" alt="the description"/>
+        <!-- For all of the recipes, instead of adding seperate images with wordings of their time and serving portion, I inserted a PNG with the data instead so that it'll look
+        balance and neater. I chose to add the time and serving portion over the other details because I reckon these two details are the most crutial data for most users when 
+        considering what to cook due to convenience. If the dish would take too long, it'll end up being very time consuming and something that needs to be prepared ahead of time.
+        As for the portion, it'll be good to allow the users to decide on whether to include this as one of the dishes depending on the number of pax they are serving and the total 
+        number of dishes planned to be served for that meal. -->
+      </div>
+
+    </div>
+    
+    <!-- Recipe 2 -->
+    <div class="RecipeBox HM V S I">
+
+      <div class="RecipeImageContainer">
+
+      <a href="https://www.abc.net.au/everyday/caprese-salad-slow-roasted-tomato-rocket-basil-gremolata-recipe/10776846" target="_blank">
+        <img class="RecipeImg" src="./images/Caprese.jpg" alt="plate of caprese salad" />
+
+        <p class="Attribution">
+          "<a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/25597828@N00/4254859304">Caprese Salad</a>" by 
+          <a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/25597828@N00">wEnDaLicious</a> is licensed under 
+          <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by-nd-nc/2.0/jp/?ref=openverse">
+            CC BY-NC-ND 2.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/nd.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+          </a>
+        </p>
+
+      <a href="https://www.abc.net.au/everyday/caprese-salad-slow-roasted-tomato-rocket-basil-gremolata-recipe/10776846" target="_blank">
+        <h2 class="RecipeName"><u>Caprese Salad with Slow-Roasted Tomatoes, Rocket and Basil Gremolata</u></h2>
+        </a>
+
+      <p class="Author"><i>By: Hetty Mckinnon</i></p>
+
+      </div>
+
+      <div>
+        <img class="DescriptionImg" src="./images/recipe 2.png" alt="the description"/>
+      </div>
+
+    </div>
+    
+    <!-- Recipe 3 -->
+    <div class="RecipeBox KLA V SD F">
+
+      <div class="RecipeImageContainer">
+
+      <a href="https://www.seriouseats.com/crispy-enoki-and-onion-fritter-with-thai-curry-mayo-recipe" target="_blank">
+        <img class="RecipeImg" src="./images/Enoki.jpg" alt="enoki mushrooms" />
+
+        <p class="Attribution">
+          "<a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/48600074651@N01/107148202">brown enoki mushrooms</a>" by 
+          <a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/48600074651@N01">chotda</a> is licensed under 
+          <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by-nd-nc/2.0/jp/?ref=openverse">
+            CC BY-NC-ND 2.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/nd.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+          </a>
+        </p> 
+
+      <a href="https://www.seriouseats.com/crispy-enoki-and-onion-fritter-with-thai-curry-mayo-recipe" target="_blank">
+        <h2 class="RecipeName"><u>Crispy Enoki and Onion Fritters with Thai Curry Mayo Recipe</u></h2>
+        </a>
+
+        <p class="Author"><i>By: J. Kenji López-Alt</i></p>
+
+      </div>
+
+      <div>
+        <img class="DescriptionImg" src="./images/recipe 3.png" alt="the description"/>
+      </div>
+
+    </div>
+    
+    <!-- Recipe 4 -->
+    <div class="RecipeBox M V SD K">
+
+      <div class="RecipeImageContainer">
+
+      <a href="https://www.maangchi.com/recipe/jjinppang" target="_blank">
+        <img class="RecipeImg" src="./images/Red_Bean_Bun.jpg" alt="ripped open steamed bun with red bean paste" />
+
+        <p class="Attribution">
+          "<a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/10559879@N00/33435831771">Sweet red bean bun 豆沙包 AUD2 - Wing Loong, Melbourne</a>" by 
+          <a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/10559879@N00">avlxyz</a> is licensed under 
+          <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/2.0/?ref=openverse">
+            CC BY-NC 2.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+          </a>
+        </p>
+
+        <a href="https://www.maangchi.com/recipe/jjinppang" target="_blank">
+        <h2 class="RecipeName"><u>Fluffy Steamed Buns filled with Sweet Red Beans</u></h2>
+        </a>
+
+        <p class="Author"><i>By: Maangchi</i></p>
+
+      </div>
+
+      <div>
+        <img class="DescriptionImg2" src="./images/recipe 4.png" alt="the description"/>
+        <!-- At this point, you may have noticed that the few recipe above were mostly class"DescriptionImg" instead of "DescriptionImg2". This is because I wanted the png below the recipe
+        name and the author credit to be balance and neatly placed equally with the other recipe. Some of the recipe only have 2 rows instead of 3 row of title which affected the placement
+        and spacing of the png. "DescriptionImg2" has higher margin-top than "DescriptionImg". -->
+      </div>
+
+    </div>
+    
+    <!-- Recipe 5 -->
+    <div class="RecipeBox KLA V SD W">
+
+      <div class="RecipeImageContainer">
+
+      <a href="https://www.seriouseats.com/the-food-lab-best-chocolate-chip-cookie-recipe" target="_blank">
+        <img class="RecipeImg" src="./images/Cookies.jpg" alt="plate of chocolate chip cookies" />
+
+        <p class="Attribution">
+          "<a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/70757891@N00/7133349441">Browned butter chocolate chip cookies</a>" by 
+          <a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/70757891@N00">grongar</a> is licensed under 
+          <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by/2.0/?ref=openverse">
+            CC BY 2.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+          </a>
+        </p>
+
+        <a href="https://www.seriouseats.com/the-food-lab-best-chocolate-chip-cookie-recipe" target="_blank">
+        <h2 class="RecipeName"><u>The Food Lab's Chocolate Chip Cookies</u></h2>
+        </a>
+
+        <p class="Author"><i>By: J. Kenji López-Alt</i></p>
+
+      </div>
+
+      <div>
+        <img class="DescriptionImg2" src="./images/recipe 5.png" alt="the description"/>
+      </div>
+
+    </div>
+    
+    <!-- Recipe 6 -->
+    <div class="RecipeBox KLA V SD F">
+
+      <div class="RecipeImageContainer">
+
+      <a href="https://www.seriouseats.com/grilled-cheese-with-kimchi-recipe" target="_blank">
+        <img class="RecipeImg" src="./images/Grilled_Cheese.jpg" alt="grilled cheese sandwich with pickles" />
+
+        <p class="Attribution">
+          "<a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/85508296@N00/8340994832">Lefty’s Food Truck</a>" by 
+          <a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/85508296@N00">cherrylet</a> is licensed under 
+          <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/2.0/?ref=openverse">
+            CC BY-NC-SA 2.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+          </a>
+        </p>
+
+        <a href="https://www.seriouseats.com/grilled-cheese-with-kimchi-recipe" target="_blank">
+        <h2 class="RecipeName"><u>Grilled Cheese With Kimchi Recipe</u></h2>
+        </a>
+
+        <p class="Author"><i>By: J. Kenji López-Alt</i></p>
+        
+      </div>
+
+      <div>
+        <img class="DescriptionImg2" src="./images/recipe 6.png" alt="the description"/>
+      </div>
+
+    </div>
+    
+    <!-- Recipe 7 -->
+    <div class="RecipeBox CLM MB MC A">
+
+      <div class="RecipeImageContainer">
+
+      <a href="https://www.patreon.com/posts/recipe-hands-off-60369279" target="_blank">
+        <img class="RecipeImg" src="./images/Pork_Beans.jpg" alt="pot of pork and beans" />
+
+        <p class="Attribution">
+          "<a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/22798667@N00/6158931731">spicy pork and bean chili</a>" by 
+          <a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/22798667@N00">telepathicparanoia</a> is licensed under 
+          <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by-nd/2.0/?ref=openverse">
+            CC BY-ND 2.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/nd.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+          </a>
+        </p> 
+
+        <a href="https://www.patreon.com/posts/recipe-hands-off-60369279" target="_blank">
+        <h2 class="RecipeName"><u>Hands-Off Pork and Beans</u></h2>
+        </a>
+
+        <p class="Author"><i>By: Carla Lalli Music</i></p>
+
+      </div>
+
+      <div>
+        <img class="DescriptionImg2" src="./images/recipe 7.png" alt="the description"/>
+      </div>
+
+    </div>
+    
+    <!-- Recipe 8 -->
+    <div class="RecipeBox M V SD K">
+
+      <div class="RecipeImageContainer">
+    
+      <a href="https://www.maangchi.com/recipe/kimchijeon" target="_blank">
+        <img class="RecipeImg" src="./images/Kimchi_Pancake.jpg" alt="kimchi pancake with bowl of dipping sauce" />
+
+        <p class="Attribution">
+          "<a target="_blank" rel="noopener noreferrer" href="https://commons.wikimedia.org/w/index.php?curid=54768084">File:Kimchibuchimgae (kimchi pancake).jpg</a>" by 
+          <a target="_blank" rel="noopener noreferrer" href="https://pixabay.com/ko/users/sharonang-99559/">sharonang</a> is marked with 
+          <a target="_blank" rel="noopener noreferrer" href="http://creativecommons.org/publicdomain/zero/1.0/deed.en?ref=openverse">
+            CC0 1.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/zero.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+          </a>
+        </p>
+
+        <a href="https://www.maangchi.com/recipe/kimchijeon" target="_blank">
+        <h2 class="RecipeName"><u>Kimchi Pancake</u></h2>
+        </a>
+
+        <p class="Author"><i>By: Maangchi</i></p>
+
+      </div>
+
+      <div>
+        <img class="DescriptionImg2" src="./images/recipe 8.png" alt="the description"/>
+      </div>
+
+    </div>
+    
+    <!-- Recipe 9 -->
+    <div class="RecipeBox KLA V MC NA">
+
+      <div class="RecipeImageContainer">
+
+      <a href="https://www.seriouseats.com/shakshuka-north-african-shirred-eggs-tomato-pepper-recipe" target="_blank">
+        <img class="RecipeImg" src="./images/Shakshuka.jpg" alt="pan filled with shakshuka" />
+
+        <p class="Attribution">
+          "<a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/33993074@N00/14288893837">Shakshuka</a>" by 
+          <a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/33993074@N00">joyosity</a> is licensed under 
+          <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by/2.0/?ref=openverse">
+            CC BY 2.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+          </a>
+        </p>
+
+        <a href="https://www.seriouseats.com/shakshuka-north-african-shirred-eggs-tomato-pepper-recipe" target="_blank">
+        <h2 class="RecipeName"><u>Shakshuka (North African–Style Poached Eggs in Spicy Tomato Sauce)</u></h2>
+        </a>
+
+        <p class="Author"><i>By: J. Kenji López-Alt</i></p>
+
+      </div>
+
+      <div>
+        <img class="DescriptionImg" src="./images/recipe 9.png" alt="the description"/>
+      </div>
+
+    </div>
+    
+    <!-- Recipe 10 -->
+    <div class="RecipeBox CLM P MC I">
+
+      <div class="RecipeImageContainer">
+
+      <a href="https://www.patreon.com/posts/pasta-with-sauce-45042575" target="_blank">
+        <img class="RecipeImg" src="./images/Cauliflower_Spaghetti.jpg" alt="bowl of spaghettie with cauliflower sauce" />
+
+        <p class="Attribution">
+          "<a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/35468144810@N01/6240477142">Spaghetti with Cauliflower and Anchovy Breadcrumbs</a>" by 
+          <a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/35468144810@N01">Girl Interrupted Eating</a> is licensed under 
+          <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by/2.0/?ref=openverse">
+            CC BY 2.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+          </a>
+        </p>
+
+        <a href="https://www.patreon.com/posts/pasta-with-sauce-45042575" target="_blank">
+        <h2 class="RecipeName"><u>Spaghetti with Melted Cauliflower Sauce</u></h2>
+        </a>
+
+        <p class="Author"><i>By: Carla Lalli Music</i></p>
+
+      </div>
+
+      <div>
+        <img class="DescriptionImg2" src="./images/recipe 10.png" alt="the description"/>
+      </div>
+
+    </div>
+    
+    <!-- Recipe 11 -->
+    <div class="RecipeBox M MB MC K">
+
+      <div class="RecipeImageContainer">
+
+      <a href="https://www.maangchi.com/recipe/yangnyeom-tongdak" target="_blank">
+        <img class="RecipeImg" src="./images/Korean_Fried_Chicken.jpg" alt="plate of fried chicken with pickles and kimchi" />
+
+        <p class="Attribution">
+          "<a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/40726522@N02/8563518350">Bon Chon Korean Fried Chicken Wings</a>" by 
+          <a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/40726522@N02">powerplantop</a> is licensed under 
+          <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by-nd-nc/2.0/jp/?ref=openverse">
+            CC BY-NC-ND 2.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/nd.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+          </a>
+        </p> 
+
+        <a href="https://www.maangchi.com/recipe/yangnyeom-tongdak" target="_blank">
+        <h2 class="RecipeName"><u>Sweet, Sour, & Spicy Korean Fried Chicken</u></h2>
+        </a>
+
+        <p class="Author"><i>By: Maangchi</i></p>
+
+      </div>
+
+      <div>
+        <img class="DescriptionImg2" src="./images/recipe 11.png" alt="the description"/>
+      </div>
+
+    </div>
+    
+    <!-- Recipe 12 -->
+    <div class="RecipeBox KLA MB MC R">
+
+      <div class="RecipeImageContainer">
+
+      <a href="https://www.seriouseats.com/ultimate-beef-stroganof-recipe" target="_blank">
+        <img class="RecipeImg" src="./images/Stroganoff.jpg" alt="bowl of beef stroganoff pasta" />
+
+        <p class="Attribution">
+          "<a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/66606673@N00/4597118575">Beef Stroganoff</a>" by 
+          <a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/66606673@N00">cobalt123</a> is licensed under 
+          <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/2.0/?ref=openverse">
+            CC BY-NC-SA 2.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+          </a>
+        </p>
+
+        <a href="https://www.seriouseats.com/ultimate-beef-stroganof-recipe" target="_blank">
+        <h2 class="RecipeName"><u>The Ultimate Beef Stroganoff Recipe</u></h2>
+        </a>
+
+        <p class="Author"><i>By: J. Kenji López-Alt</i></p>
+
+      </div>
+
+      <div>
+        <img class="DescriptionImg2" src="./images/recipe 12.png" alt="the description"/>
+      </div>
+
+    </div>
+    
+    <!-- Recipe 13 -->
+    <div class="RecipeBox CLM V D FR">
+
+      <div class="RecipeImageContainer">
+
+      <a href="https://www.patreon.com/posts/recipe-vanilla-60100711" target="_blank">
+        <img class="RecipeImg" src="./images/Pear_Tart.jpg" alt="pear tart on a table" />
+
+        <p class="Attribution">
+          "<a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/37829433@N03/4711738063">Tarte Amandines aux Poires - Almond-Pear Tart 0205-1550</a>" by 
+          <a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/37829433@N03">Eat my Cake now</a> is licensed under 
+          <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by-nd-nc/2.0/jp/?ref=openverse">
+            CC BY-NC-ND 2.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/nd.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+          </a>
+        </p>
+
+        <a href="https://www.patreon.com/posts/recipe-vanilla-60100711" target="_blank">
+        <h2 class="RecipeName"><u>Vanilla-Brown Butter Pear Tart</u></h2>
+        </a>
+
+        <p class="Author"><i>By: Carla Lalli Music</i></p>
+
+      </div>
+
+      <div>
+        <img class="DescriptionImg2" src="./images/recipe 13.png" alt="the description"/>
+      </div>
+
+    </div>
+
+    <!-- Recipe 14 -->
+    <div class="RecipeBox HM V MC">
+
+      <div class="RecipeImageContainer">
+
+      <a href="https://www.abc.net.au/everyday/vegetarian-carbonara-with-mushrooms-and-miso/12426392" target="_blank">
+        <img class="RecipeImg" src="./images/Mushroom_Carbonara.jpg" alt="pan filled with mushroom carbonara pasta" />
+
+        <p class="Attribution">
+          "<a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/22508531@N08/49471971493">Mushroom carbonara</a>" by 
+          <a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/22508531@N08">Like_the_Grand_Canyon</a> is licensed under 
+          <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/2.0/?ref=openverse">
+            CC BY-NC 2.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+          </a>
+        </p>
+
+        <a href="https://www.abc.net.au/everyday/vegetarian-carbonara-with-mushrooms-and-miso/12426392" target="_blank">
+        <h2 class="RecipeName"><u>Vegetarian Carbonara with Mushrooms, Miso and Parmesan</u></h2>
+        </a>
+
+        <p class="Author"><i>By: Hetty Mckinnon</i></p>
+
+      </div>
+
+      <div>
+        <img class="DescriptionImg" src="./images/recipe 14.png" alt="the description"/>
+      </div>
+
+    </div>
+  </div>
+
+    </section>
+
+  </body>
 
 </html>
