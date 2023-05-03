@@ -1,0 +1,299 @@
+/*
+  This one CSS file is imported into both index.html AND hosono.html so you need to be careful that it 
+  works for both.
+*/
+
+*{
+  box-sizing: border-box;
+  background-origin: border-box;
+  margin: 0;
+}
+
+:root{
+  /* first two colours come from Kuroi's Manga Pallete Palette */
+  /* https://lospec.com/palette-list/manga-pallete */
+  --col-01:#171219;
+  --col-02:#f2fbeb;
+  --col-03:#5252ff;
+  --col-04:#b6e878;
+  font-size: 16px;
+  /* scroll behaviour makes the <a> links to ids scroll to position over time rather than immediately */
+  scroll-behavior: smooth;
+}
+
+body{
+  padding: 1rem;
+  background-color: var(--col-02);
+  color: var(--col-01);
+}
+
+.button {
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 15px 8px;
+  cursor: pointer;
+  background-color: var(--col-04);
+}
+
+.animationpart{
+  height: 8rem;
+  flex-grow: 1;
+  /* duration of the whole cycle. /
+  / animation: cycleColour 2s infinite; makes the rgb infinite ofc */
+}
+
+#animation:hover{
+  animation: RGBcolour 2s infinite;
+  /* This is the animation part that is implemented and attached to the buttons. The rgb buttons are made possible with this style. It is set to go through
+  the keyframes within 2 seconds and with me making it infinite, it allows the keyframes to keep looping. Thus, it becomes INFINITE RBG RAINBOW. */
+}
+
+@keyframes RGBcolour {
+  16.67% {
+    background-color: red;
+  }
+  33.33% {
+    background-color: magenta;
+  }
+  50% {
+    background-color: blue;
+  }
+  66.67% {
+    background-color: cyan;
+  }
+  83.33% {
+    background-color: green;
+  }
+  100% {
+    background-color: yellow;
+  }
+}
+/* The keyframes to create the RGB colours.*/
+
+#top-button:hover {
+  background-color: var(--col-02);
+  transition: 1s;
+  transform: scale(1.4);
+  cursor: pointer;
+}
+/* Just a simple hover animation that expands the box and its content when the cursor hovers over the box. The transition lasts for 1 second.*/
+
+nav {
+  margin-top: 1rem;
+}
+
+nav li{
+  font-size: 1rem;
+  display: inline-block;
+}
+
+ol{
+  list-style-type: none;
+}
+/* This helped remove the listing style so that my categories will fit neately in a button rather than a list.*/
+
+section{
+  margin-bottom: 2rem;
+}
+
+h1{
+  font-size: 3rem;
+}
+
+h2{
+  font-size: 2rem;
+}
+
+p{
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+figcaption{
+  width: fit-content;
+}
+
+dl ul{
+  margin-bottom: 0;
+}
+
+li{
+  font-size: 1rem;
+}
+
+dd{
+  padding-left: 60px;
+}
+
+li ul{
+  padding-left: 40px;
+}
+
+.img-wrapper{
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.img-figure{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article-img{
+  width: 80%;
+}
+
+.res-columns{
+  column-width: 25rem;
+}
+
+#mode-button{
+  float: right;
+  /* note the use of position: sticky to keep the button on the page even with scrolling */
+  position: sticky;
+  top: 1rem;
+}
+/* THe style for the light and dark mode button.*/
+
+/* code for loading page */
+
+#load-body{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* changing button to look like a link */
+
+#load-button{
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 15px 8px;
+  background-color: var(--col-04);
+  height: 80px;
+  width: 200px;
+  margin-top: 200px;
+}
+/* I changed the link to look like a button instead. */
+
+#load-throbber{
+  display: none;
+}
+/* I changed it to none so that the loading bar does not get displayed from the start or from any point of time.*/
+
+/* Media Queries */
+
+/* medium devices 600 - 992 */
+@media only screen and (min-width: 600px) {
+  :root{
+    font-size: 20px;
+  }
+  
+  .img-wrapper{
+    width: 75%;
+    margin: 1.5rem auto;
+  }
+
+}
+
+/* medium devices 992 + */
+@media only screen and (min-width: 992px) {
+  :root{
+    font-size: 24px;
+  }
+
+  .img-wrapper{
+    max-width: fit-content;
+    float: right;
+    margin: 1.5rem;
+  }
+
+}
+
+@media (prefers-reduced-motion) {
+  :root{
+    scroll-behavior: auto;
+  }
+}
+
+/* Image loading roation */
+
+#motion-container{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+ }
+ 
+ #animation-container{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+ }
+ /* This container is to neatly keep and contain everything in a neat row. */
+ 
+ #animation1{ /* Guitar */
+  animation: spinner1 4s infinite;
+  margin-right: 400px;
+ }
+ /* Added margin to this so that it would be more spaced out rather than side by side and cramped in the middle. */
+ 
+ #animation2{ /* Loading PNG */
+  animation: spinner2 2.5s infinite;
+ }
+ /* The timing have been adjusted individually to move at my preference.*/
+ 
+ #animation3{ /* Guitar */
+  animation: spinner3 4s infinite;
+  margin-left: 400px;
+ }
+  /* Added margin to this so that it would be more spaced out rather than side by side and cramped in the middle. */
+
+ .animation4:hover{ /* Click to Load Page button*/
+  animation: spinner4 3s infinite;
+ }
+ 
+ @keyframes spinner1 {
+  0% { transform: rotateY(-180deg); }
+  50% { transform: rotateY(0deg); }
+  100% { transform: rotateY(-180deg); }
+ }
+ /* This png flips from the left to the right*/
+ 
+ @keyframes spinner2 {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+ }
+  /* This png spins 360 degree*/
+ 
+ @keyframes spinner3 {
+  0% { transform: rotateY(0deg); }
+  50% { transform: rotateY(180deg); }
+  100% { transform: rotateY(0deg); }
+ }
+  /* This png flips from the right to the left*/
+
+ @keyframes spinner4 {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-45deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(45deg); }
+  100% { transform: rotate(0deg); }
+ }
+  /* This png slightly turns from the left and right*/
+ 
+

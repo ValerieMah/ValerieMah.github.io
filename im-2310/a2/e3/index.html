@@ -1,21 +1,51 @@
 <!DOCTYPE html>
 
+<!-- 
+
+  PROVIDE MEANINGFUL FEEDBACK TO THE FOLLOWING ELEMENTS:
+  1) <button> with the id of load-link on the loading page (index.html)
+  2) <div> with the id of load-throbber on the loading page (index.html)
+  3) <li> inside of the <ol> inside of the <nav> on the information page (hosono.html)
+  4) <button> with the id of mode-button on the information page (hosono.html)
+  5) switchModes() function - hint you can add a transition CSS property to the <body> and it will be inherited 
+     by all the elements inside, so when custom CSS variables are changed it will apply transition
+
+-->
+
 <html lang="en">
 
-<head>
+  <head>
 
-    <meta charset="utf-8" name="viewport" content="width=device-width, initial scale=1.0">
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 
-    <script src="script.js"></script>
+    <title>Loading Page</title>
 
-</head>
+    <script src="./fakeLoad.js" defer></script>
 
-<body>
+  </head>
 
-    <h1>This is a test. My life is amess. I need to rest.</h1>
-    
-</body>
+  <body id="load-body">
 
+      <h1>Haruomi Hosono</h1>
+
+      <div id="motion-container">
+        <div id="animation-container">
+            <div id="animation1"><img src="./img/guitar.png"></img></div>
+            <!-- Just some simple flip animation for the guitars on the home page. I chose to put a guitar there as it is the artist's common instrument of choice and
+            use. There is not much other deeper meanings to why I added this there besides displaying animation and not making the page look plain.-->
+            <button id="load-button" class="animation4" onclick="loadPageAfterDelay(10000, './hosono.html')">Click to Load Page</button>
+            <!-- Originally, this was not a button but a link with the word "Click to Load Page". However, I changed it to a button which would look nicer on the page
+            instead of just a plain sentence out coming out from the background. I added animation with keyframe that allowed my button to rotate to the left and right
+            when the cursor is hovering over the button.-->
+            <div id="animation2"><img src="./img/loading.png" id="load-throbber"></img></div>
+            <!-- This is my loading bar design. Instead of a typical straight line, I chose to draw a circle png that looks like a circle loading while it rotates. This
+            can be seen after clicking on the above button, the loading circle will become visible and start to mimic a loading-like action through 360 degree rotation.
+            Both this loading circle and the button (code above this line) were made possible with Java script.-->
+            <div id="animation3"><img src="./img/guitar.png"></img></div>
+          </div>
+        </div>
+
+  </body>
 </html>
