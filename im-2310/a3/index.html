@@ -14,7 +14,60 @@
 
 <body>
 
-    <h1>This is a test. My life is amess. I need to rest.</h1>
+    <div id="overlay"></div>
+    <button class="button" id="startbutton" id="start" onclick="fade()">Start</button>
+
+    <dialog id="modalDialog">
+
+        <p>For this assignment, I chose playful and feedback as my Abstract Adjectives and Interaction Design Principles. With that in mind, 
+            I chose to make a dinosaur as it’s something that’s more towards the fun side which is playful. Elements such as vibrant colours 
+            and the cartoon animation style can be considered playful. Whereas for feedback, the experience is unique so much so that it 
+            changes the interaction the users have with the website while using it. Therefore, with this concept in mind, I decided to make 
+            a website that features a cute dinosaur that allows users to watch the dinosaur walk around the webpage, hear the dinosaur roar, 
+            and even learn some simple facts about the dinosaur (dinofacts). </p>
+        <p>  Jumping into the features implemented onto the main interaction, we have the t-rex. The first thing that users will immediately 
+            notice is the dinosaur walking from the left to the right of the screen while blinking. This was made possible with css style, 
+            where I added keyframe so that animation can be added into the dinosaur png. The three keyframes are walking animation, the png 
+            changing animation (dinosaur blinking), and the dinosaur turning. Then these keyframes were added into the animation id on 
+            infinite (which will loop the animation). This was made so that the dinosaur looks like it’s alive and moving around on the 
+            website. In class, we were only taught to rotate and flip the png. However, that would make the dinosaur look very odd instead. 
+            Therefore, the code was made so that the dinosaur can actively walk around the screen which looks livelier.  Another feature that 
+            was implemented to that animation was hover. With the user’s cursor over the dinosaur png, it’ll pause the walking and turning 
+            but maintain the face changing png keyframe which will still make it look like the dinosaur is blinking and staring at the user. 
+            I made this a feature instead of leaving it stagnant or doing nothing is so that it looks more realistic in terms of the dinosaur.  
+            It creates a cute, happy, and soft experience for the user. Besides that, I also added a container that contains some simple 
+            information about the featured dinosaur. This involved style css and java script. Upon hovering over the dinosaur, the container 
+            that contains the information about the dinosaur will appear on the right side of the screen. Java script was used so that it would 
+            change the visibility of the box which is set as hidden on default in the style css to visible. Last but not least, by left clicking 
+            on the dinosaur, users will be able to hear it roar. I personally feel that adding sound into it is a nice touch to adding more 
+            interactions and bring my dinosaur to life. This was added onto the dinosaur with a java script function- event listener. </p>
+        <p>  Just a last interesting feature, the home starting page with the button at the bottom is made to be the play button to the background 
+            music since chrome doesn’t allow users to have an autoplay background sound. With the button clicked, java script will hide that 
+            background that is overlaying the dinosaur and other main background. The background music is set on loop, and I’ve added a mute 
+            button on the top left to allow users to have the option of muting the background sound. 
+        </p>
+        <p>Credits:</p>
+        <p>meteor:https://www.youtube.com/watch?v=WFN9tUtrq-s</p>
+        <p>background sound effect:https://www.youtube.com/watch?v=_kpFUnfAJMY</p>
+        <p>dinosaur roar:https://www.youtube.com/watch?v=1RgJ71Jle7M</p>
+        <button id="closeModal">Close</button>
+
+    </dialog>
+
+    <button id="showModal">Designer Statement</button>
+
+    <div class="grid-container">
+        <div id="muteButton"></div>
+        <img class="meteor" id="meteorite" src="./img/meteor.png"></img> 
+        <img class="dinosaur" id="animation" id="dinoroar" onmouseenter="text()" onmouseleave="notext()" ></img>
+
+        <div id="popup" class="word-container">
+            <h1>Tyrannosaurus</h1>
+            <p>Tyrannosaurus Rex, also known as T-Rex for short is was a large predatory dinosaur that could be found 
+               68 to 65 million years ago. The T rex is a carnivore which a massive skull balanced with a long, heavy tail. 
+               Compared to the large and powerful hind limbs, its forelimbs were small but powerful for their size. </p>
+        </div>
+    </div>
     
 </body>
 
